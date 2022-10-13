@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+ <input type="number" name="" id="inp1">
+<input type="button" id="inp2" value="OK" onclick="gago()"> 
+
+<script>
+  function gago(){
+    let inp1val = document.getElementById('inp1').value
+     let n = inp1val 
+    path = `http://localhost:8080/${n}`
+    c = httpGet(path)
+    console.log(c)
+  }
+
+
+function httpGet(theUrl)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+    // console.log(n);
+}
+
+// var c = httpGet("http://localhost:8080/")
+
+// console.log(c)
+
+    
+ 
+</script>
+
+</body>
+</html>
